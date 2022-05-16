@@ -1099,7 +1099,7 @@ h6 { font-size: 16px;}
 }
 
 #green-mode{
-	background-color: #78866b;
+	background-color: #2D2D39;
 }
 
 #purple-mode{
@@ -1384,7 +1384,6 @@ h6 { font-size: 16px;}
 }
 
 #login-page-wrapper {
-    height: 100%;
     display: flex;
     align-items: baseline;
     justify-content: space-around;

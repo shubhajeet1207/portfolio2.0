@@ -1374,7 +1374,6 @@ h1 {
     width: 93%;
 }
 #login-page-wrapper {
-    height: 100%;
     display: flex;
     align-items: baseline;
     justify-content: space-around;

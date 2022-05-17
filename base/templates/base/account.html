@@ -25,9 +25,12 @@
 				<img id="user_pic" src="{{profile.profile_pic.url}}">
 				<br>
 				<h2>{{profile}}</h2>
-				<p>Email: {{profile.email}}</p>
 				<hr>
-				<p>{{profile.bio}}</p>
+				<p align="left"><span class="decorations">Email:</span>			{{profile.email}}</p>
+				<hr>
+				<p align="left"><span class="decorations">Bio:			{{profile.bio}}</span></p>
+				<hr>
+				<p align="left"><span class="decorations">Twitter Handle:	{{profile.twitter}}</span></p>
 				<hr>
 				<a class="btn btn-info btn-block" href="{% url 'update_profile' %}">Edit Profile</a>
 			</div>

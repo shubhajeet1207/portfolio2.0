@@ -15,7 +15,7 @@ def create_profile(sender, instance, created, **kwargs):
 
 
 def update_profile(sender, instance, created, **kwargs):
-    if created == False:
+    if not created:
         instance.profile.first_name = instance.first_name
         instance.profile.last_name = instance.last_name
         instance.profile.email = instance.email

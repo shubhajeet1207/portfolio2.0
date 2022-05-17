@@ -152,8 +152,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'spymonk-cloud',
-    'API_KEY': '575685413639591',
-    'API_SECRET': 'Kspt3mQs4fSDi9RuYcN_yWCEE-c'
+    'API_KEY': os.environ.get('CLOUDINARY_API'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET')
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
@@ -165,12 +165,12 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = "YOU_EMAIL"
 # EMAIL_HOST_PASSWORD = 'YOU_EMAIL_PASSWORD'
-MAILJET_API_KEY = '0eaeb3140db38a3cf86626e9660cf81f'
-MAILJET_API_SECRET = '35fe97acb661b80acbc32cc7798a4c5f'
+MAILJET_API_KEY = os.environ.get('MAILJET_API')
+MAILJET_API_SECRET = os.environ.get('MAILJET_SECRET')
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = '/tmp/django-emails'
 
-DEFAULT_FROM_EMAIL = 'shubhajeet.pradhan12@gmail.com'
+DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_USER')
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 

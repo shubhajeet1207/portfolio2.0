@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+import cloudinary_storage
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,7 +30,7 @@ SECRET_KEY = 'hrj48*mobkzo)s6q+2wfqcg=_=@5c38n&sb4_vlp#bb^zyp_pi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -46,6 +50,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'storages',
+    'cloudinary_storage',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -144,6 +149,15 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'spymonk-cloud',
+    'API_KEY': '575685413639591',
+    'API_SECRET': 'Kspt3mQs4fSDi9RuYcN_yWCEE-c'
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

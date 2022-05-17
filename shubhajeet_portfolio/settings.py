@@ -159,13 +159,18 @@ CLOUDINARY_STORAGE = {
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "YOU_EMAIL"
-EMAIL_HOST_PASSWORD = 'YOU_EMAIL_PASSWORD'
+# EMAIL_HOST_USER = "YOU_EMAIL"
+# EMAIL_HOST_PASSWORD = 'YOU_EMAIL_PASSWORD'
+MAILJET_API_KEY = '0eaeb3140db38a3cf86626e9660cf81f'
+MAILJET_API_SECRET = '35fe97acb661b80acbc32cc7798a4c5f'
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = '/tmp/django-emails'
 
+DEFAULT_FROM_EMAIL = 'shubhajeet.pradhan12@gmail.com'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 

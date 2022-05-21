@@ -23,7 +23,7 @@ def home(request):
     posts = Post.objects.filter(active=True, featured=True)[0:6]
 
     context = {'posts': posts}
-    return render(request, './base/templates/base/index.html', context)
+    return render(request, 'templates/base/index.html', context)
 
 
 def posts(request):

@@ -63,26 +63,6 @@ def post(request, slug):
     return render(request, 'base/post.html', context)
 
 
-def posts(request):
-    posts = Post.objects.filter(active=True)
-    myFilter = PostFilter(request.GET, queryset=posts)
-    posts = myFilter.qs
-
-    page = request.GET.get('page')
-
-    paginator = Paginator(posts, 6)
-
-    try:
-        posts = paginator.page(page)
-    except PageNotAnInteger:
-        posts = paginator.page(1)
-    except EmptyPage:
-        posts = paginator.page(paginator.num_pages)
-
-    context = {'posts': posts, 'myFilter': myFilter}
-    return render(request, 'base/posts.html', context)
-
-
 def profile(request):
     return render(request, 'base/profile.html')
 

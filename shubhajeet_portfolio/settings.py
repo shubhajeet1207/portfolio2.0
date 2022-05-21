@@ -16,6 +16,7 @@ import cloudinary.uploader
 import cloudinary.api
 import cloudinary_storage
 from django.core.mail import send_mail
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -184,3 +185,5 @@ CKEDITOR_CONFIGS = {
         'width': '100%',
     },
 }
+
+django_heroku.settings(locals())

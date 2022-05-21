@@ -1,0 +1,1 @@
+web: gunicorn shubhajeet_portfolio.wsgi --log-file -

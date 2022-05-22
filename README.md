@@ -39,7 +39,7 @@ To get this portfolio on your system follow the below steps:
 ```bash
   pip install -r requirements.txt
 ```
-5.Now,  generate the SQL commands for preinstalled apps.
+5. Now,  generate the SQL commands for preinstalled apps.
 ```bash
   python manage.py makemigrations
 ```

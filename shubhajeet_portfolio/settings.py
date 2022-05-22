@@ -102,8 +102,12 @@ DATABASES = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'portfolio',
+        'USER': 'postgres',
+        'PASSWORD': 'shubhapra12072000',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -137,7 +141,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

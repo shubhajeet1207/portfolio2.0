@@ -37,7 +37,7 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False)
     featured = models.BooleanField(default=False)
-    tags = models.ManyToManyField(Tag, null=True, blank=True)
+    tags = models.ManyToManyField(Tag, blank=True)
     slug = models.SlugField(null=True, blank=True)
 
     def __str__(self):

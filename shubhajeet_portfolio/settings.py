@@ -99,18 +99,12 @@ DATABASES = {
     }
 }
 '''
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'djongo',
         'NAME': 'portfolio',
-        'USER': 'postgres',
-        'PASSWORD': 'shubhapra12072000',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -158,7 +152,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
-
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'spymonk-cloud',
     'API_KEY': os.environ.get('CLOUDINARY_API'),
@@ -167,18 +160,20 @@ CLOUDINARY_STORAGE = {
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
-EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
-# MAILJET_API_KEY = os.environ.get('MAILJET_API')
-# MAILJET_API_SECRET = os.environ.get('MAILJET_SECRET')
+EMAIL_HOST_USER = 'apikey'
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = '/tmp/django-emails'
-
 DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_USER')
+
+# EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+# # MAILJET_API_KEY = os.environ.get('MAILJET_API')
+# MAILJET_API_SECRET = os.environ.get('MAILJET_SECRET')
+
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
